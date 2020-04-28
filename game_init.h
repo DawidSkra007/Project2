@@ -31,8 +31,8 @@ typedef struct player{
     //the color associated with the player
     color player_color;
     char name[PLAYER_NAME_LENGTH];
-    unsigned int own_pieces;//no. of own pieces accumulated
-    unsigned int captured_pieces;//no. of adversary’s pieces captured
+    unsigned int pieces_owned;//no. of own pieces accumulated
+    unsigned int pieces_captured;//no. of adversary’s pieces captured
     /*
      * A player should also be characterized by:
      * name,
@@ -66,14 +66,18 @@ typedef struct square {
 
 }square;
 
+square set_empty(square*s);
+
+square set_green(square*s);
+
+square set_red(square*s);
+
 //Function to create the players
 void initialize_players(player players[PLAYERS_NUM]);
 
 //Function to create the board
 void initialize_board(square board[BOARD_SIZE][BOARD_SIZE]);
 
-//Function to implement turns
-void turns(player players[PLAYERS_NUM]);
 
 
 
